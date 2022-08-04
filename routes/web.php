@@ -64,7 +64,7 @@ Route::post('/register-user/', function (\Illuminate\Http\Request $request) {
 Route::post('/q/{q}', function (Request $request, int $q) {
     $user = Auth::user();
     $answer = Answer::query()
-                    ->where('question', $request->get('a'))
+                    ->where('question', $q)
                     ->where('user_id', $user->id)
                     ->first();
     if (!$answer) {
@@ -87,3 +87,5 @@ Route::post('/q/{q}', function (Request $request, int $q) {
 Route::get('/test/', function (Request $request) {
     dd(Auth::user());
 });
+
+Route::get('/answers', [\App\Http\Controllers\ExportController::class, 'exportCsv']);

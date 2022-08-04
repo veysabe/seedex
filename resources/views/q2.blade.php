@@ -23,25 +23,20 @@
         <form action="/q/2" method="POST">
             @csrf
             <div class="title">
-
-                LOREM IPSUM GENERATOR
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla
+                Lо какой фазы роста кукурузы заморозки растению не страшны?
             </div>
             <div class="form-inputs">
                 <label class="button-radio">
                     <input type="radio" name="a" value="1">
-                    <div>Вариант 1</div>
+                    <div>до 3-го листа</div>
                 </label>
                 <label class="button-radio">
                     <input type="radio" name="a" value="2">
-                    <div>Вариант 2</div>
+                    <div>до 5-го листа</div>
                 </label>
                 <label class="button-radio">
                     <input type="radio" name="a" value="3">
-                    <div>Вариант 3</div>
+                    <div>кукурузе заморозки вообще не страшны</div>
                 </label>
                 <button>Готово</button>
             </div>
