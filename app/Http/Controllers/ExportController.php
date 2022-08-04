@@ -33,9 +33,9 @@ class ExportController extends Controller
                 $row['Хозяйство'] = $task['hoz'];
                 $row['Номер телефона'] = $task['phone'];
                 $row['Отзыв'] = $task['review'];
-                $row['Ответ 1'] = $answers[0]['answer'] == 2 ? 'Правильно' : 'Неправильно';
-                $row['Ответ 2'] = $answers[1]['answer'] == 2 ? 'Правильно' : 'Неправильно';
-                $row['Ответ 3'] = $answers[2]['answer'] == 2 ? 'Правильно' : 'Неправильно';
+                foreach ($answers as $key => $answer) {
+                    $row['Ответ ' . $key + 1] = $answer['answer'] === "2" ? 'Правильно' : 'Неправильно';
+                }
 
                 fputcsv($file,
                         [
