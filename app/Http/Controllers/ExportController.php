@@ -28,7 +28,12 @@ class ExportController extends Controller
             fputcsv($file, $columns, ';');
 
             foreach ($tasks as $task) {
-                $answers = Answer::query()->where('user_id', $task['id'])->orderBy('question_number', 'ASC')->get()->toArray();
+                $row = [];
+                $answers = Answer::query()
+                                 ->where('user_id', $task['id'])
+                                 ->orderBy('question_number', 'ASC')
+                                 ->get()
+                                 ->toArray();
                 $row['Пользователь'] = $task['name'];
                 $row['Хозяйство'] = $task['hoz'];
                 $row['Номер телефона'] = $task['phone'];
@@ -37,17 +42,18 @@ class ExportController extends Controller
                     $row['Ответ ' . $key + 1] = $answer['answer'] === "2" ? 'Правильно' : 'Неправильно';
                 }
 
-                fputcsv($file,
-                        [
-                            $row['Пользователь'],
-                            $row['Хозяйство'],
-                            $row['Номер телефона'],
-                            $row['Отзыв'],
-                            $row['Ответ 1'],
-                            $row['Ответ 2'],
-                            $row['Ответ 3'],
-                        ],
-                ';'
+                fputcsv(
+                    $file,
+                    [
+                        $row['Пользователь'],
+                        $row['Хозяйство'],
+                        $row['Номер телефона'],
+                        $row['Отзыв'],
+                        $row['Ответ 1'] ?? '',
+                        $row['Ответ 2'] ?? '',
+                        $row['Ответ 3'] ?? '',
+                    ],
+                    ';'
                 );
             }
 
@@ -57,7 +63,8 @@ class ExportController extends Controller
         return response()->stream($callback, 200, $headers);
     }
 
-    private function isAnswerRight(array $answer) {
+    private function isAnswerRight(array $answer)
+    {
 
     }
 }
