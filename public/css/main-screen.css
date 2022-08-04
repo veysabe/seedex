@@ -1,0 +1,110 @@
+body.main-screen {
+    background-image: url("/img/flower-green.png");
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 90vh;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.main-screen .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 70%;
+    height: 100%;
+}
+
+.main-screen .logo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 120px;
+    padding: 40px 20px;
+}
+
+.main-screen .logo-syn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+}
+
+.logo-syn img {
+    max-width: 100%;
+}
+
+.main-screen .logo img {
+    max-width: 100%;
+}
+
+.main-screen .form .form-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-screen .form .form-inputs *,
+.main-screen .form .title {
+    text-align: center;
+}
+
+.main-screen .form .title {
+    margin-bottom: 20px;
+}
+
+textarea {
+    outline: none;
+    border: none;
+    width: calc(100% - 20px);
+    resize: none;
+    text-align: left !important;
+    padding: 10px;
+    height: calc(100% - 20px);
+    font-size: 14px;
+}
+
+.textarea-container {
+    width: 100%;
+    border: 2px solid #DBDAD9;
+    overflow: hidden;
+    border-radius: 7px;
+    min-height: 170px;
+    margin-bottom: 10px;
+}
+.main-screen .form .form-inputs input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #DBDAD9;
+    border-radius: 7px;
+}
+
+button {
+    margin-top: 10px;
+    border: none;
+    background-color: #B8C516;
+    border-radius: 7px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.smile-image {
+    width: 60px;
+    margin-bottom: 30px;
+}
+
+.smile-image img {
+    max-width: 100%;
+}
+

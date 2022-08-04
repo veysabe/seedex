@@ -1,0 +1,92 @@
+body.q-screen {
+    background-image: url("/img/flower-bw.png");
+    background-color: #B8C516;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 90vh;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.q-screen .container {
+    margin: 60px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*margin: auto;*/
+    width: 70%;
+    height: 100%;
+}
+
+.q-screen .logo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 120px;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+}
+
+.q-screen .logo-syn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+}
+
+.q-screen .logo-syn img {
+    max-width: 100%;
+}
+
+.q-screen .logo img {
+    max-width: 100%;
+}
+
+.q-screen .form .form-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.q-screen .form .form-inputs *,
+.q-screen .form .title {
+    text-align: center;
+}
+
+.q-screen .form .title {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.form-inputs .button-radio input {
+    display: none;
+}
+
+.form-inputs .button-radio input:checked + div {
+    background-color: white;
+    color: #B8C516;
+    font-weight: bold;
+}
+
+.form-inputs .button-radio div {
+    background-color: white;
+    border-radius: 7px;
+    padding: 10px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 20px;
+    border: none;
+    background-color: white;
+    border-radius: 7px;
+    padding: 10px;
+    color: #B8C516;
+    font-size: 16px;
+}
+
