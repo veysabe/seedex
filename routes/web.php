@@ -19,10 +19,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/q1', function () {
     return view('q1');
 });
 
@@ -32,6 +28,10 @@ Route::get('/q2', function () {
 
 Route::get('/q3', function () {
     return view('q3');
+});
+
+Route::get('/register', function () {
+    return view('welcome');
 });
 
 Route::get('/end', function () {
@@ -46,9 +46,8 @@ Route::post('/register-user/', function (\Illuminate\Http\Request $request) {
         'password' => $user_info['phone'],
     ];
 
-    $user = User::query()->where('phone', $credentials['phone'])->first();
-    if (!$user) {
-        $user = new User();
+    $user = Auth::user();
+    if ($user) {
         $user->phone = $credentials['phone'];
         $user->hoz = $credentials['hoz'];
         $user->password = $credentials['password'];
@@ -58,11 +57,35 @@ Route::post('/register-user/', function (\Illuminate\Http\Request $request) {
     }
     Auth::login($user);
 
-    return redirect('/q1');
+    return redirect('/end');
 });
 
-Route::post('/q/{q}', function (Request $request, int $q) {
+Route::post('/q/1', function (Request $request) {
+    $user = new User();
+    $user->save();
+    Auth::login($user);
+    $answer = Answer::query()
+                    ->where('question', 1)
+                    ->where('user_id', $user->id)
+                    ->first();
+    if (!$answer) {
+        $answer = new Answer();
+        $answer->question_number = 1;
+        $answer->user_id = $user->id;
+        $answer->question = 1;
+        $answer->is_correct = true;
+        $answer->answer = $request->get('a');
+        $answer->save();
+    }
+    return redirect('/q2');
+});
+
+Route::post('/q/2', function (Request $request) {
+    $q = 2;
     $user = Auth::user();
+    if (!$user) {
+        return redirect('/');
+    }
     $answer = Answer::query()
                     ->where('question', $q)
                     ->where('user_id', $user->id)
@@ -73,15 +96,34 @@ Route::post('/q/{q}', function (Request $request, int $q) {
         $answer->user_id = $user->id;
         $answer->question = $q;
         $answer->is_correct = true;
-    }
-    $answer->answer = $request->get('a');
-    $answer->save();
-    $next = $q + 1;
-    if ($next > 3) {
-        return redirect('/end');
+        $answer->answer = $request->get('a');
+        $answer->save();
     }
 
-    return redirect('/q' . $next);
+    return redirect('/q3');
+});
+
+Route::post('/q/3', function (Request $request) {
+    $q = 3;
+    $user = Auth::user();
+    if (!$user) {
+        return redirect('/');
+    }
+    $answer = Answer::query()
+                    ->where('question', $q)
+                    ->where('user_id', $user->id)
+                    ->first();
+    if (!$answer) {
+        $answer = new Answer();
+        $answer->question_number = $q;
+        $answer->user_id = $user->id;
+        $answer->question = $q;
+        $answer->is_correct = true;
+        $answer->answer = $request->get('a');
+        $answer->save();
+    }
+
+    return redirect('/register');
 });
 
 Route::get('/test/', function (Request $request) {
