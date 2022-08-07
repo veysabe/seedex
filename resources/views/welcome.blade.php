@@ -47,6 +47,12 @@
 </body>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+            let viewheight = $(window).height();
+            let viewwidth = $(window).width();
+            let viewport = document.querySelector("meta[name=viewport]");
+            viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0");
+        }, 300);
         $('input[name=phone]').mask('+7 (000)000-00-00')
         // $('.form').on('submit', (e) => {
         //     e.preventDefault();
