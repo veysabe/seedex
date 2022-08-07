@@ -23,7 +23,7 @@
         <form action="/q/2" method="POST">
             @csrf
             <div class="title">
-                Lо какой фазы роста кукурузы заморозки растению не страшны?
+                До какой фазы роста кукурузы заморозки растению не страшны?
             </div>
             <div class="form-inputs">
                 <label class="button-radio">
