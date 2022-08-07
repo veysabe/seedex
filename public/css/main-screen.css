@@ -1,3 +1,8 @@
+html {
+    height: 105vh;
+    position: relative;
+}
+
 body.main-screen {
     background-image: url("/img/flower-green.png");
     background-size: 65%;
@@ -14,7 +19,6 @@ body.main-screen {
 
 body * {
     font-family: 'Roboto', sans-serif;
-    position: relative;
 }
 
 .main-screen .container {
