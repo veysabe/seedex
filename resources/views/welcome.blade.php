@@ -37,6 +37,9 @@
         </form>
     </div>
 </div>
+<div class="logo-syn">
+    <img src="/img/syngenta-logo-blue.png" alt="">
+</div>
 <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
