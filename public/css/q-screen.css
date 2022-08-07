@@ -4,7 +4,7 @@ body.q-screen {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: top right;
-    height: 90vh;
+    height: 75vh;
 }
 
 body * {
@@ -36,7 +36,7 @@ body * {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 120px;
+    width: 110px;
 }
 
 .q-screen .logo-syn img {
