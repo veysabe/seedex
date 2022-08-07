@@ -1,5 +1,5 @@
 html {
-    height: 110vh;
+    height: 90vh;
     position: relative;
 }
 
@@ -8,7 +8,7 @@ body.q-screen {
     background-color: #B8C516;
     background-size: 65%;
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: top -140px right 0;
     height: 90vh;
 }
 
@@ -18,11 +18,11 @@ body * {
 }
 
 .q-screen .container {
-    margin: 60px auto 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /*align-items: center;*/
+    /*justify-content: center;*/
     /*margin: auto;*/
+    margin: 140px auto 0 auto;
     width: 70%;
     height: 100%;
 }
@@ -31,8 +31,8 @@ body * {
     position: absolute;
     top: 0;
     left: 20px;
-    width: 120px;
-    padding: 40px 20px;
+    width: 100px;
+    padding: 20px 20px;
     background-color: white;
     border-radius: 0 0 20px 20px;
 }
@@ -41,7 +41,7 @@ body * {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 110px;
+    width: 80px;
 }
 
 .q-screen .logo-syn img {

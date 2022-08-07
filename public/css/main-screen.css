@@ -1,5 +1,5 @@
 html {
-    height: 110vh;
+    height: 90vh;
     position: relative;
 }
 
@@ -7,7 +7,7 @@ body.main-screen {
     background-image: url("/img/flower-green.png");
     background-size: 65%;
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: top -140px right 0;
     height: 90vh;
 }
 
@@ -15,6 +15,7 @@ body.main-screen {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 body * {
@@ -23,10 +24,11 @@ body * {
 
 .main-screen .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    width: 70%;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    margin: 100px auto 0 auto;
+    /*margin: auto;*/
+    width: 80%;
     height: 100%;
 }
 
@@ -34,7 +36,7 @@ body * {
     position: absolute;
     top: 0;
     left: 20px;
-    width: 120px;
+    width: 100px;
     padding: 40px 20px;
 }
 
@@ -42,7 +44,7 @@ body * {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 110px;
+    width: 80px;
 }
 
 .logo-syn img {
@@ -85,11 +87,11 @@ textarea {
     overflow: hidden;
     border-radius: 7px;
     min-height: 110px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 }
 .main-screen .form .form-inputs input {
     padding: 10px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     border: 2px solid #DBDAD9;
     border-radius: 7px;
 }
