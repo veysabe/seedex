@@ -23,7 +23,7 @@
         <form action="/q/1" method="POST">
             @csrf
             <div class="title">
-                Какой тип пестицидов можно cмешивать с гербицидом КАПТОРА® ПЛЮС?
+                Какой тип пестицидов можно cмешивать с гербицидом КАПТОРА® Плюс?
             </div>
             <div class="form-inputs">
                 <label class="button-radio">
