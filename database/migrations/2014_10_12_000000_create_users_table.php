@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('review')->nullable();
             $table->string('name')->nullable();
-            $table->string('phone')->unique()->nullable();
+            $table->string('phone')->nullable();
             $table->string('hoz')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();
