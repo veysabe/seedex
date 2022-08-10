@@ -20,7 +20,7 @@ class ExportController extends Controller
             "Expires"             => "0",
         ];
 
-        $columns = ['Пользователь', 'Хозяйство', 'Номер телефона', 'Отзыв', 'Ответ 1', 'Ответ 2', 'Ответ 3'];
+        $columns = ['Пользователь', 'Хозяйство', 'Номер телефона', 'Отзыв', 'Ответ 1', 'Ответ 2', 'Ответ 3', 'Дата'];
 
         $callback = function () use ($tasks, $columns) {
             $file = fopen('php://output', 'w');
@@ -41,6 +41,8 @@ class ExportController extends Controller
                 foreach ($answers as $key => $answer) {
                     $row['Ответ ' . $key + 1] = $answer['answer'] === "2" ? 'Правильно' : 'Неправильно';
                 }
+                $date = strtotime($task['created_at']);
+                $row['Дата'] = date('d/M/Y h:i:s', $date);
 
                 fputcsv(
                     $file,
@@ -52,6 +54,7 @@ class ExportController extends Controller
                         $row['Ответ 1'] ?? '',
                         $row['Ответ 2'] ?? '',
                         $row['Ответ 3'] ?? '',
+                        $row['Дата']
                     ],
                     ';'
                 );
